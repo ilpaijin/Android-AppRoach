@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">InstaCash</string>
+    <string name="endpoint_payment_methods">http://api.dev.instacash.is/countries/%s/payment-methods</string>
+    <string name="endpoint_currencies">http://api.dev.instacash.is/countries/</string>
+    <string name="get_offers">Get best prices</string>
+    <string name="crypto_amount_to_sell">You send exactly</string>
+    <string name="select_currency">select currency</string>
+</resources>

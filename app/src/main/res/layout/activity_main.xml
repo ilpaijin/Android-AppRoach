@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+            android:layout_height="192dp"
+            android:layout_width="match_parent">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:contentScrim="?attr/colorAccent">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_width="match_parent"
+                    app:layout_collapseMode="pin"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="46dp"
+                        android:layout_marginRight="10dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/btcAmountWrapper"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@android:color/white"
+                            android:focusableInTouchMode="true">
+                            <EditText
+                                android:id="@+id/btcAmount"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:hint="@string/crypto_amount_to_sell"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:focusableInTouchMode="true"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <Spinner
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:id="@+id/currenciesSpinner"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/getOfferBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:layout_margin="16dp"
+        android:tint="@android:color/white"
+        android:src="@android:drawable/ic_search_category_default"
+        app:layout_behavior="instak.instacash.ui.ScrollingFABBehavior"
+        app:fabSize="mini"
+        app:layout_anchor="@+id/collapsing_toolbar_layout"
+        app:layout_anchorGravity="bottom|right|end"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/paymentMethodsListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="26dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emptyList"
+        android:text=""/>
+
+</android.support.design.widget.CoordinatorLayout>
